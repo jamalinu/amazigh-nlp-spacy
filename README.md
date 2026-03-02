@@ -65,9 +65,9 @@ import spacy
 
 ## 👤 Author
 
-**Tu Nombre** — Jamal Saghraoui: Philologist & Computational Linguist  
+**Jamal Saghraoui** — Philologist & Computational Linguist  
 Native: Tamazight · Arabic · Spanish · French · Catalan  
-[LinkedIn]: https://www.linkedin.com/in/jsaghraoui/ (#) | [Hugging Face]: https://huggingface.co/jamalinu (#)
+[LinkedIn](https://www.linkedin.com/in/jsaghraoui/) | [Hugging Face](https://huggingface.co/jamalinu)
 ```
 
 
