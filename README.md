@@ -72,8 +72,6 @@ Native: Tamazight · Arabic · Spanish · French · Catalan
 
 ---
 
-## Bloque 3 — Tu primer notebook subido *(1 hora)*
-
 ### Abre Google Colab ahora mismo
 
 Ve a colab.research.google.com → nuevo notebook → renómbralo:
