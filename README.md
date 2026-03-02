@@ -34,7 +34,7 @@ that gap by combining:
 
 ## 🚀 Quick Start
 ```bash
-git clone https://github.com/TUUSERNAME/amazigh-nlp-spacy
+git clone https://github.com/jamalinu/amazigh-nlp-spacy
 pip install spacy
 python -m spacy download es_core_news_lg
 ```
