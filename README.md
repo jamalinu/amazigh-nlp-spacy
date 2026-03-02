@@ -65,14 +65,12 @@ import spacy
 
 ## 👤 Author
 
-**Tu Nombre** — Philologist & Computational Linguist  
+**Tu Nombre** — Jamal Saghraoui: Philologist & Computational Linguist  
 Native: Tamazight · Arabic · Spanish · French · Catalan  
-[LinkedIn](#) | [Hugging Face](#)
+[LinkedIn]: https://www.linkedin.com/in/jsaghraoui/ (#) | [Hugging Face]: https://huggingface.co/jamalinu (#)
 ```
 
----
 
-### Abre Google Colab ahora mismo
 
 Ve a colab.research.google.com → nuevo notebook → renómbralo:
 
