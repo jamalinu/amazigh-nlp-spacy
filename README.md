@@ -32,6 +32,22 @@ that gap by combining:
 | French | fr_core_news_lg | Native |
 | Catalan | ca_core_news_trf | Native |
 
+## 📓 Project Roadmap & Notebooks
+
+Este proyecto está estructurado en módulos progresivos para construir un pipeline completo de NLP para el Amazigh.
+
+### 01. Foundations: Initial Setup & spaCy Basics
+Introducción al entorno de trabajo y carga del modelo base multilingüe.
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/01_foundations_spacy.ipynb)
+
+### 02. Advanced Morphological Tokenization
+Resolución de retos lingüísticos específicos del Amazigh: segmentación de clíticos y normalización de caracteres Tifinagh.
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/02_morfologia_avanzada.ipynb)
+
+---
+
+> **Note:** Si los enlaces de arriba no abren el archivo correcto, asegúrate de que los nombres de los archivos en tu carpeta `/notebooks` coincidan exactamente con los de los links.
+
 ## 🚀 Quick Start
 ```bash
 git clone https://github.com/jamalinu/amazigh-nlp-spacy
@@ -63,5 +79,6 @@ Native: Tamazight · Arabic · Spanish · French · Catalan
 ### Abre Google Colab ahora mismo
 
 Ve a colab.research.google.com → nuevo notebook → renómbralo:
+
 ```
 01_fundamentos_spacy_amazigh.ipynb
