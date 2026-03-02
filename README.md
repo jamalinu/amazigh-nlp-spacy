@@ -44,6 +44,9 @@ Introducción al entorno de trabajo y carga del modelo base multilingüe.
 Resolución de retos lingüísticos específicos del Amazigh: segmentación de clíticos y normalización de caracteres Tifinagh.
 * [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/02_morfologia_avanzada.ipynb)
 
+### 03. Named Entity Recognition (NER) for Tamazight
+Identificación de topónimos (Rif) y personajes históricos en Latino y Tifinagh.
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/03_ner_amazigh.ipynb)
 ---
 
 > **Note:** Si los enlaces de arriba no abren el archivo correcto, asegúrate de que los nombres de los archivos en tu carpeta `/notebooks` coincidan exactamente con los de los links.
@@ -59,11 +62,6 @@ import spacy
 # Ver notebooks/ para ejemplos completos
 ```
 
-## 📓 Notebooks
-
-1. `01_fundamentos.ipynb` — spaCy basics + morphological analysis
-2. `02_comparativa.ipynb` — Cross-lingual analysis ES/FR/CA/AR
-3. `03_bereber_pipeline.ipynb` — Tamazight NER training ⭐
 
 ## 👤 Author
 
