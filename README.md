@@ -87,7 +87,8 @@ import spacy
 ## 👤 Author
 
 **Jamal Saghraoui** — Philologist & Computational Linguist  
-Native: Tamazight · Arabic · Spanish · French · Catalan  
+Native: Tamazight · Arabic · Spanish · French · Catalan
+Bridging the gap between ancient languages and modern AI." (Cerrando la brecha entre las lenguas antiguas y la IA moderna)
 [LinkedIn](https://www.linkedin.com/in/jsaghraoui/) | [Hugging Face](https://huggingface.co/jamalinu)
 ```
 
