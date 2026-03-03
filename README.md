@@ -1,17 +1,14 @@
 # 🌍 Amazigh/Berber NLP Pipeline with spaCy
-
-> First open-source NLP pipeline for Tamazight (Amazigh/Berber language) 
+> First open-source NLP pipeline for Tamazight (Amazigh/Berber language)  
 > built by a native speaker with formal linguistics training.
 
 ## 🎯 Why this project matters
-
 Tamazight is spoken by 30+ million people across North Africa, yet has 
 virtually zero computational linguistics resources. This project addresses 
 that gap by combining:
-
 - Native speaker linguistic knowledge (Tamazight, Arabic, Spanish, French, Catalan)
 - Formal philology and linguistics training
-- Modern NLP tools (spaCy, Python)
+- Modern NLP tools (spaCy, scikit-learn, Python)
 
 ## 🔬 What this project includes
 
@@ -19,8 +16,16 @@ that gap by combining:
 |--------|-------------|--------|
 | Tokenizer | Custom Tamazight tokenizer | ✅ Done |
 | NER | Named Entity Recognition (people, places) | ✅ Done |
+| Sentiment Analysis | Positive / Negative / Neutral classifier | ✅ Done |
 | Morphology | Prefix/suffix analysis for Amazigh | 🔄 In progress |
 | Corpus | Annotated sentences dataset | 🔄 In progress |
+
+## 🚀 Live Demo
+Try the model here: [amazigh-nlp-demo on Hugging Face](https://huggingface.co/spaces/jamalinu/amazigh-nlp-demo)
+
+The demo includes:
+- 🏷️ **Named Entity Recognizer** — detects people (PER) and locations (LOC)
+- 🎭 **Sentiment Analyzer** — classifies comments as Positive, Negative or Neutral
 
 ## 📊 Languages supported
 
@@ -32,69 +37,70 @@ that gap by combining:
 | French | fr_core_news_lg | Native |
 | Catalan | ca_core_news_trf | Native |
 
-🌍 Amazigh Entity Recognizer (AI)
-This project uses Natural Language Processing (NLP) and Machine Learning to identify Names (PER) and Locations (LOC) in the Amazigh/Berber language.
+## 🛠️ Tech Stack
 
-🚀 Live Demo
-Try the model here: [[PEGA AQUÍ TU ENLACE DE HUGGING FACE](https://huggingface.co/spaces/jamalinu/amazigh-nlp-demo)]
+| Tool | Usage |
+|------|-------|
+| spaCy 3.x | Tokenization, NER, preprocessing |
+| scikit-learn | Sentiment classification (Naive Bayes + TF-IDF) |
+| Python | Core language |
+| Streamlit | Web interface |
+| Hugging Face Spaces | Deployment |
 
-🛠️ Tech Stack
-Framework: spaCy 3.x
+## 📈 Project Phases
 
-Language: Python
+1. **Data Engineering** — Conversion of raw text to DocBin format
+2. **NER Training** — Supervised learning with custom NER pipeline
+3. **Sentiment Analysis** — TF-IDF + Naive Bayes classifier for social comments
+4. **Deployment** — Live web interface for real-time analysis
 
-Deployment: Hugging Face Spaces (Streamlit)
-
-Dataset: Custom-built multilingual corpus (Berber/Arabic/Latin)
-
-📈 Project Phases
-Data Engineering: Conversion of raw text to DocBin format.
-
-Training: Supervised learning with custom NER pipeline.
-
-Deployment: Implementation of a web interface for real-time analysis.
 ## 📓 Project Roadmap & Notebooks
 
-Este proyecto está estructurado en módulos progresivos para construir un pipeline completo de NLP para el Amazigh.
-
 ### 01. Foundations: Initial Setup & spaCy Basics
-Introducción al entorno de trabajo y carga del modelo base multilingüe.
-* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/04_data_prep.ipynb)
+Introduction to the working environment and loading the multilingual base model.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/01_fundamentos_spacy_amazigh.ipynb)
 
 ### 02. Advanced Morphological Tokenization
-Resolución de retos lingüísticos específicos del Amazigh: segmentación de clíticos y normalización de caracteres Tifinagh.
-* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/02_morfologia_avanzada.ipynb)
+Solving Amazigh-specific linguistic challenges: clitic segmentation and Tifinagh character normalization.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/02_morfologia_avanzada.ipynb)
 
 ### 03. Named Entity Recognition (NER) for Tamazight
-Identificación de topónimos (Rif) y personajes históricos en Latino y Tifinagh.
-* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/03_ner_amazigh.ipynb)
----
+Identification of toponyms (Rif) and historical figures in Latin and Tifinagh scripts.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/03_ner_amazigh.ipynb)
 
-> **Note:** Si los enlaces de arriba no abren el archivo correcto, asegúrate de que los nombres de los archivos en tu carpeta `/notebooks` coincidan exactamente con los de los links.
+### 04. Sentiment Analysis — Tamazight Social Comments
+First sentiment classifier for Tamazight. Labels: Positive / Negative / Neutral.  
+Built with TF-IDF + Naive Bayes and a custom Tamazight sentiment lexicon.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/04_sentiment_tamazight.ipynb)
 
 ## 🚀 Quick Start
+
 ```bash
 git clone https://github.com/jamalinu/amazigh-nlp-spacy
-pip install spacy
-python -m spacy download es_core_news_lg
+pip install spacy scikit-learn streamlit joblib
+python -m spacy download xx_ent_wiki_sm
 ```
+
 ```python
 import spacy
-# Ver notebooks/ para ejemplos completos
-```
+import joblib
 
+# NER
+nlp = spacy.load(".")
+doc = nlp("Abdelkrim el Khattabi d amjahid n Arrif.")
+for ent in doc.ents:
+    print(ent.text, ent.label_)
+
+# Sentiment
+modelo = joblib.load("modelo_tamazight.pkl")
+print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
+# → ['Positivo']
+```
 
 ## 👤 Author
-
 **Jamal Saghraoui** — Philologist & Computational Linguist  
 Native: Tamazight · Arabic · Spanish · French · Catalan
-Bridging the gap between ancient languages and modern AI." (Cerrando la brecha entre las lenguas antiguas y la IA moderna)
+
+> *"Bridging the gap between ancient languages and modern AI."*
+
 [LinkedIn](https://www.linkedin.com/in/jsaghraoui/) | [Hugging Face](https://huggingface.co/jamalinu)
-```
-
-
-
-Ve a colab.research.google.com → nuevo notebook → renómbralo:
-
-```
-01_fundamentos_spacy_amazigh.ipynb
