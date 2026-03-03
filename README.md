@@ -32,13 +32,34 @@ that gap by combining:
 | French | fr_core_news_lg | Native |
 | Catalan | ca_core_news_trf | Native |
 
+🌍 Amazigh Entity Recognizer (AI)
+This project uses Natural Language Processing (NLP) and Machine Learning to identify Names (PER) and Locations (LOC) in the Amazigh/Berber language.
+
+🚀 Live Demo
+Try the model here: [[PEGA AQUÍ TU ENLACE DE HUGGING FACE](https://huggingface.co/spaces/jamalinu/amazigh-nlp-demo)]
+
+🛠️ Tech Stack
+Framework: spaCy 3.x
+
+Language: Python
+
+Deployment: Hugging Face Spaces (Streamlit)
+
+Dataset: Custom-built multilingual corpus (Berber/Arabic/Latin)
+
+📈 Project Phases
+Data Engineering: Conversion of raw text to DocBin format.
+
+Training: Supervised learning with custom NER pipeline.
+
+Deployment: Implementation of a web interface for real-time analysis.
 ## 📓 Project Roadmap & Notebooks
 
 Este proyecto está estructurado en módulos progresivos para construir un pipeline completo de NLP para el Amazigh.
 
 ### 01. Foundations: Initial Setup & spaCy Basics
 Introducción al entorno de trabajo y carga del modelo base multilingüe.
-* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/01_foundations_spacy.ipynb)
+* [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/04_data_prep.ipynb)
 
 ### 02. Advanced Morphological Tokenization
 Resolución de retos lingüísticos específicos del Amazigh: segmentación de clíticos y normalización de caracteres Tifinagh.
