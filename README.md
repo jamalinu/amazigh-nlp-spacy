@@ -99,7 +99,7 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 
 ## 👤 Author
 **Jamal Saghraoui** — Philologist & Computational Linguist  
-Native: Tamazight · Arabic · Spanish · French · Catalan
+Native: Tamazight (Tarifit variant) · Arabic · Spanish · French · Catalan
 
 > *"Bridging the gap between ancient languages and modern AI."*
 
