@@ -6,6 +6,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/advanced_morphology_tamazight.ipynb)
 [![Hugging Face Space](https://img.shields.io/badge/🤗%20Hugging%20Face-Space-blue)](https://huggingface.co/spaces/jamalinu/amazigh-nlp-demo)
 [![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-orange)](https://huggingface.co/jamalinu/advanced_morphology_tamazight)
+[![Hugging Face Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-green)](https://huggingface.co/datasets/jamalinu/tarifit-pbc-corpus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Language: Tarifit](https://img.shields.io/badge/Language-Tarifit%20Berber-green)](https://en.wikipedia.org/wiki/Tarifit)
 
@@ -30,8 +31,8 @@ that gap by combining:
 | Tokenizer | Custom Tamazight tokenizer | ✅ Done |
 | NER | Named Entity Recognition (people, places) | ✅ Done |
 | Sentiment Analysis | Positive / Negative / Neutral classifier | ✅ Done |
-| **Tarifit Morphology** | **Clitic tokenizer + POS + Morpheme segmenter** | ✅ **Done** |
-| Corpus | Annotated sentences dataset | 🔄 In progress |
+| Tarifit Morphology | Clitic tokenizer + POS + Morpheme segmenter | ✅ Done |
+| **PBC Corpus** | **57 phonetically balanced sentences for TTS** | ✅ **Done** |
 
 ---
 
@@ -39,13 +40,19 @@ that gap by combining:
 
 Try all tools here → **[amazigh-nlp-demo on Hugging Face](https://huggingface.co/spaces/jamalinu/amazigh-nlp-demo)**
 
-The demo includes:
-
 | Tool | Description |
 |------|-------------|
 | 🔎 **Named Entity Recognizer** | Detects people (PER) and locations (LOC) |
 | 🎭 **Sentiment Analyzer** | Classifies comments as Positive, Negative or Neutral |
 | 🏔️ **Tarifit Morphology Analyzer** | Clitics, POS tagging, morpheme segmentation, interlinear gloss |
+
+---
+
+## 🗄️ Datasets
+
+| Dataset | Description | Link |
+|---------|-------------|------|
+| tarifit-pbc-corpus | 57 phonetically balanced sentences for Tarifit TTS · IPA transcriptions · 100% phoneme coverage | [![Hugging Face](https://img.shields.io/badge/🤗-Dataset-green)](https://huggingface.co/datasets/jamalinu/tarifit-pbc-corpus) |
 
 ---
 
@@ -80,12 +87,10 @@ Built with TF-IDF + Naive Bayes and a custom Tamazight sentiment lexicon.
 
 ---
 
-### 05 — Advanced Morphology Tamazight (Tarifit) ⭐ NEW
+### 05 — Advanced Morphology Tamazight (Tarifit) ⭐
 Custom tokenizer for Berber clitics, POS tagging, morpheme segmentation and displaCy visualization.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/advanced_morphology_tamazight.ipynb)
-
-**What this notebook covers:**
 
 | Step | Content |
 |------|---------|
@@ -96,7 +101,6 @@ Custom tokenizer for Berber clitics, POS tagging, morpheme segmentation and disp
 | 5 | `MorphemeSegmenter` — prefix · root · suffix · consonantal root |
 | 6 | displaCy visualization — color-coded POS and dependency trees |
 
-**Example:**
 ```
 Input:   ur ffigh ara ddarwi
 Tokens:  [ur]=NEG  [ffigh]=VERB  [ara]=NEG2  [ddarwi]=ADV
@@ -106,19 +110,44 @@ English: "We did not go out together"
 
 ---
 
+### 06 — Phonetically Balanced Corpus for TTS ⭐ NEW
+First phonetically balanced corpus for Tarifit. 57 sentences with IPA transcription
+designed for Text-To-Speech training. 100% phoneme coverage.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/tarifit_pbc_corpus.ipynb)
+[![Dataset](https://img.shields.io/badge/🤗-tarifit--pbc--corpus-green)](https://huggingface.co/datasets/jamalinu/tarifit-pbc-corpus)
+
+| Step | Content |
+|------|---------|
+| 1 | Tarifit phoneme inventory — 27 phonemes |
+| 2 | 57 sentences — 12 sentence types |
+| 3 | Phoneme coverage analysis — Counter + regex |
+| 4 | Visualization with matplotlib |
+| 5 | Export — CSV, Coqui TTS format, recording script |
+
+```
+Coverage: 27/27 phonemes — 100%
+Sentence types: negation, SVO, imperative, causative,
+                passive, emphatic, uvular, geminate...
+```
+
+---
+
 ## 🗂️ Repository Structure
 
 ```
 amazigh-nlp-spacy/
 │
-├── notebooks/                          # Colab notebooks 01–04
+├── notebooks/                           # Colab notebooks 01–04
 ├── data/
-│   └── tarifit_clitics.csv             # Clitic + lexicon dataset
+│   ├── tarifit_clitics.csv              # Clitic + lexicon dataset
+│   └── tarifit_pbc_corpus.csv           # Phonetically balanced corpus
 ├── demo/
-│   └── app.py                          # Streamlit app (Hugging Face Space)
-├── models/                             # Trained spaCy models
+│   └── app.py                           # Streamlit app (Hugging Face Space)
+├── models/                              # Trained spaCy models
 │
-├── advanced_morphology_tamazight.ipynb # Notebook 05 — Tarifit morphology
+├── advanced_morphology_tamazight.ipynb  # Notebook 05 — Tarifit morphology
+├── tarifit_pbc_corpus.ipynb             # Notebook 06 — PBC corpus for TTS
 ├── NER_Amazigh_Phase_1_Data_Preprocessing.ipynb
 ├── requirements.txt
 ├── LICENSE
@@ -184,9 +213,11 @@ print(modelo.predict(["Tamazight yelha, nefrah fell-as"]))
 - [x] Phase 3 — Named Entity Recognition (NER)
 - [x] Phase 4 — Sentiment analysis
 - [x] Phase 5 — Tarifit clitic morphology analyzer
-- [ ] Phase 6 — Expand lexicon to 500+ entries
-- [ ] Phase 7 — Tifinagh script support ⵜⵉⴼⵉⵏⴰⵖ
-- [ ] Phase 8 — Statistical model trained on annotated corpus
+- [x] Phase 6 — Phonetically Balanced Corpus (57 sentences · 100% phoneme coverage)
+- [ ] Phase 7 — Record audio with native speaker → first Tarifit TTS dataset
+- [ ] Phase 8 — Train TTS model with Coqui TTS / VITS
+- [ ] Phase 9 — Tifinagh script support ⵜⵉⴼⵉⵏⴰⵖ
+- [ ] Phase 10 — Statistical model trained on annotated corpus
 
 ---
 
