@@ -22,6 +22,7 @@ The demo includes three tools running live:
 | 🔎 Named Entity Recognizer | Detects people (PER) and locations (LOC) |
 | 🎭 Sentiment Analyzer | Classifies comments as Positive / Negative / Neutral with confidence % |
 | 🏔️ Tarifit Morphology Analyzer | POS tagging, clitic tokenization and morpheme segmentation |
+| 🎙️ TTS Text Normalizer | Converts informal Tarifit (Chat-Arabic numerals, digraphs) to phonetic symbols |
 
 ---
 
@@ -98,10 +99,16 @@ Full morphological pipeline for Tarifit Berber:
 
 ---
 
-### 07. Tarifit TTS — Linguistic Frontend
-Text normalization pipeline for Tarifit TTS training.
-Converts informal orthography (Chat-Arabic numerals like `7→ħ`, `9→q`, `gh→ɣ`) to clean phonetic symbols.
-Handles prosodic clitic tokenization (`d-`, `n-`, `t-`) and exports `metadata.csv` in Coqui TTS / VITS format.
+### 07. Tarifit TTS — Linguistic Frontend (End-to-End Pipeline)
+Complete text normalization pipeline for Tarifit TTS training.
+Converts informal orthography (Chat-Arabic numerals: `7→ħ`, `9→q`, `3→ɛ`, `gh→ɣ`, `dh→ð`, `rr→rː`) to clean phonetic symbols.
+Handles prosodic clitic tokenization (`d-`, `n-`, `t-`), connects with the Phonetically Balanced Corpus (notebook 05),
+and exports production-ready `metadata.csv` in Coqui TTS / VITS format.
+
+**Pipeline:**
+```
+Raw informal text → Phonetic normalization → PBC Corpus → metadata.csv → Neural vocoder (VITS)
+```
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/Tarifit_TTS_Linguistic_Frontend.ipynb)
 
@@ -167,6 +174,7 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 | NER | F1-score | 100% (training set) |
 | Sentiment | Accuracy | 77% (30 examples) |
 | TTS Corpus | Phoneme coverage | 100% (27 phonemes) |
+| TTS Frontend | Normalization rules | Chat-Arabic + digraphs + geminates |
 | Morphology | Rules coverage | Tarifit core grammar |
 
 ---
