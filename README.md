@@ -71,8 +71,13 @@ Exports the final model as `model-best`.
 ### 04. Tamazight Social Sentiment Analyzer
 First sentiment classifier for Tamazight social media comments.
 Labels: **Positive / Negative / Neutral**.
-Built with TF-IDF + Naive Bayes and a custom Tamazight sentiment lexicon.
-Accuracy: **77%** with 30 examples (expanding dataset in progress).
+
+Key features:
+- **90 native-validated sentences** (30 per category) — everyday life in the Rif
+- **Tarifit sentiment lexicon** — covers both Tarifit colloquial and classical Tamazight
+- **BOW + lexicon features** combined for better generalization
+- **Cross-validation (5-fold)** for reliable evaluation
+- Best model: **SVM 88.9%** accuracy
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/Tamazight_Social_Sentiment_Analyzer.ipynb)
 
@@ -137,7 +142,7 @@ Chat-Arabic      ─┘
 | Tool | Usage |
 |------|-------|
 | spaCy 3.x | Tokenization, NER, morphological analysis |
-| scikit-learn | Sentiment classification (Naive Bayes + TF-IDF) |
+| scikit-learn | Sentiment classification (SVM + BOW + Lexicon) |
 | Python | Core language |
 | Streamlit | Web interface |
 | Hugging Face Spaces | Deployment |
@@ -166,8 +171,8 @@ for ent in doc.ents:
 # → Arrif LOC
 
 # Sentiment
-modelo = joblib.load("modelo_tamazight.pkl")
-print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
+modelo = joblib.load("modelo_tarifit_sentiment.pkl")
+print(modelo.predict(["Said ynje7 di lemti7an"]))
 # → ['Positivo']
 ```
 
@@ -178,7 +183,7 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 | Module | Metric | Score |
 |--------|--------|-------|
 | NER | F1-score | 100% (training set) |
-| Sentiment | Accuracy | 77% (30 examples) |
+| Sentiment | Accuracy | **88.9%** (90 native sentences, CV-5) |
 | TTS Corpus | Phoneme coverage | 100% (27 phonemes) |
 | TTS Frontend | Normalization rules | Chat-Arabic + digraphs + diacritics + Tifinagh |
 | TTS Customer Service Corpus | Phoneme coverage | 100% (24 native-validated sentences) |
@@ -191,10 +196,6 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 Native: Tamazight · Arabic · Spanish · French · Catalan
 
 > *"Bridging the gap between ancient languages and modern AI."*
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/jsaghraoui/)
-[![Hugging Face](https://img.shields.io/badge/HuggingFace-yellow?logo=huggingface)](https://huggingface.co/jamalinu)
-[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/jamalinu)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/jsaghraoui/)
 [![Hugging Face](https://img.shields.io/badge/HuggingFace-yellow?logo=huggingface)](https://huggingface.co/jamalinu)
