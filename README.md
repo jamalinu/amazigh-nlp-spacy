@@ -106,7 +106,7 @@ Key features:
 - **Multi-script normalization**: Chat-Arabic numerals (`7→ħ`, `9→q`, `3→ʕ`), digraphs (`gh→ɣ`, `sh→ʃ`, `dh→dˁ`), linguistic diacritics (`ṣ→sˁ`, `ẓ→zˁ`, `ḍ→dˁ`, `ṭ→tˁ`)
 - **Tifinagh → Latin → Phonetic** full transliteration pipeline (IRCAM standard)
 - **Tashelhit phoneme inventory** — 29 phonemes documented and validated
-- **Customer service corpus** — 24 native Tarifit sentences with **100% phoneme coverage**
+- **Customer service corpus** — 24 native Tarifit sentences **validated by a native speaker** with **100% phoneme coverage**
 - Exports production-ready `metadata.csv` in Coqui TTS / VITS format
 
 **Pipeline:**
@@ -181,7 +181,7 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 | Sentiment | Accuracy | 77% (30 examples) |
 | TTS Corpus | Phoneme coverage | 100% (27 phonemes) |
 | TTS Frontend | Normalization rules | Chat-Arabic + digraphs + diacritics + Tifinagh |
-| TTS Customer Service Corpus | Phoneme coverage | 100% (24 native sentences) |
+| TTS Customer Service Corpus | Phoneme coverage | 100% (24 native-validated sentences) |
 | Morphology | Rules coverage | Tarifit core grammar |
 
 ---
@@ -191,6 +191,10 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 Native: Tamazight · Arabic · Spanish · French · Catalan
 
 > *"Bridging the gap between ancient languages and modern AI."*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/jsaghraoui/)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-yellow?logo=huggingface)](https://huggingface.co/jamalinu)
+[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/jamalinu)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/jsaghraoui/)
 [![Hugging Face](https://img.shields.io/badge/HuggingFace-yellow?logo=huggingface)](https://huggingface.co/jamalinu)
