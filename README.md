@@ -100,14 +100,20 @@ Full morphological pipeline for Tarifit Berber:
 ---
 
 ### 07. Tarifit TTS — Linguistic Frontend (End-to-End Pipeline)
-Complete text normalization pipeline for Tarifit TTS training.
-Converts informal orthography (Chat-Arabic numerals: `7→ħ`, `9→q`, `3→ɛ`, `gh→ɣ`, `dh→ð`, `rr→rː`) to clean phonetic symbols.
-Handles prosodic clitic tokenization (`d-`, `n-`, `t-`), connects with the Phonetically Balanced Corpus (notebook 05),
-and exports production-ready `metadata.csv` in Coqui TTS / VITS format.
+Complete text normalization pipeline for Tarifit and Tashelhit TTS training.
+
+Key features:
+- **Multi-script normalization**: Chat-Arabic numerals (`7→ħ`, `9→q`, `3→ʕ`), digraphs (`gh→ɣ`, `sh→ʃ`, `dh→dˁ`), linguistic diacritics (`ṣ→sˁ`, `ẓ→zˁ`, `ḍ→dˁ`, `ṭ→tˁ`)
+- **Tifinagh → Latin → Phonetic** full transliteration pipeline (IRCAM standard)
+- **Tashelhit phoneme inventory** — 29 phonemes documented and validated
+- **Customer service corpus** — 24 native Tarifit sentences with **100% phoneme coverage**
+- Exports production-ready `metadata.csv` in Coqui TTS / VITS format
 
 **Pipeline:**
 ```
-Raw informal text → Phonetic normalization → PBC Corpus → metadata.csv → Neural vocoder (VITS)
+Tifinagh (IRCAM) ─┐
+Latin informal   ─┼→ Normalizer → Phonetic symbols → metadata.csv → Neural vocoder
+Chat-Arabic      ─┘
 ```
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamalinu/amazigh-nlp-spacy/blob/main/notebooks/Tarifit_TTS_Linguistic_Frontend.ipynb)
@@ -174,7 +180,8 @@ print(modelo.predict(["Tamazight yelha, nefraḥ fell-as"]))
 | NER | F1-score | 100% (training set) |
 | Sentiment | Accuracy | 77% (30 examples) |
 | TTS Corpus | Phoneme coverage | 100% (27 phonemes) |
-| TTS Frontend | Normalization rules | Chat-Arabic + digraphs + geminates |
+| TTS Frontend | Normalization rules | Chat-Arabic + digraphs + diacritics + Tifinagh |
+| TTS Customer Service Corpus | Phoneme coverage | 100% (24 native sentences) |
 | Morphology | Rules coverage | Tarifit core grammar |
 
 ---
